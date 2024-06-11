@@ -26,7 +26,7 @@ endif()
 # We currently do an in-source build for the Mod, because of gradle.
 add_custom_target( Minecraft
   ALL
-  COMMAND ${GRADLE} setupDecompWorkspace build testClasses -x test --stacktrace -Pversion=${MALMO_VERSION}
+  COMMAND ${GRADLE} setupDecompWorkspace build testClasses -x test -x getAssets --stacktrace -Pversion=${MALMO_VERSION}
   DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/main/resources/version.properties
   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
   COMMENT "Building Minecraft..."
