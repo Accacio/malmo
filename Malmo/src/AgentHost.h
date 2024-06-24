@@ -164,6 +164,7 @@ namespace malmo
             const boost::shared_ptr<MissionInitSpec> getMissionInit() const;
 
             friend std::ostream& operator<<(std::ostream& os, const AgentHost& ah);
+            bool findServer(const ClientPool& client_pool);
         private:
 
             static void testSchemasCompatible();
@@ -174,7 +175,6 @@ namespace malmo
 
             ClientPool reserveClients(const ClientPool& client_pool, int clients_required);
             void findClient(const ClientPool& client_pool);
-            bool findServer(const ClientPool& client_pool);
 
             void listenForMissionControlMessages( int port );
             boost::shared_ptr<VideoServer> listenForVideo(boost::shared_ptr<VideoServer> video_server, int port, short width, short height, short channels, TimestampedVideoFrame::FrameType frametype);
